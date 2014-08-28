@@ -1,10 +1,10 @@
 <?php
 require_once('../RemoteImageDownload.php');
 
-$sFile = 'sample.csv';  // µ¥ÀÌÅÍ ÆÄÀÏ¸í
-$sFindUrl = 'http://jonnung.cafe24.com';   // Ã£À» URL º£ÀÌ½º
-$sSaveRootDir = 'download/';        // ¹Ýµå½Ã ¹Ì¸® »ý¼º µÇ¾î ÀÖ¾î¾ßÇÔ
-$sLogFile = 'download_result.csv';  // °á°ú ¸®Æ÷Æ® ÆÄÀÏ
+$sFile        = 'sample.csv';  // ë°ì´í„° íŒŒì¼ëª…
+$sFindUrl     = 'http://jonnung.cafe24.com';  // ì°¾ì„ URL ë² ì´ìŠ¤
+$sSaveRootDir = 'download/';  // ë°˜ë“œì‹œ ë¯¸ë¦¬ ìƒì„±ë˜ì–´ ìžˆì–´ì•¼ í•¨
+$sLogFile     = 'download_result.csv';  // ê²°ê³¼ ë¦¬í¬íŠ¸ íŒŒì¼ëª…
 
 $oRemoteImage = new RemoteImageDownload($sFindUrl, $sSaveRootDir);
 $iRoofCount = 0;
@@ -14,8 +14,8 @@ while(feof($oFileHandle) == false)
 
     $aCsvLine = fgetcsv($oFileHandle);
 
-    $iProductCode = $aCsvLine[0];  // ±¸ºÐ°ª
-    $sProductDesc = $aCsvLine[1];  // img ÅÂ±×°¡ Æ÷ÇÔ µÈ ÅØ½ºÆ®
+    $iProductCode = $aCsvLine[0];  // êµ¬ë¶„ê°’
+    $sProductDesc = $aCsvLine[1];  // img íƒœê·¸ê°€ í¬í•¨ ëœ í…ìŠ¤íŠ¸
 
     $aResult = $oRemoteImage->getRemoteFile($sProductDesc);
 
